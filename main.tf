@@ -1,11 +1,8 @@
-
-
-
 resource "aws_instance" "vishal" {
   ami           = "ami-09da212cf18033880"
   instance_type = "t2.micro"
   key_name = "keyPair"
-  # count = 2
+  count = 4
 
   tags = {
     Name = "HelloWorld"
