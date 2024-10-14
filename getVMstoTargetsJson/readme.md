@@ -4,6 +4,8 @@ flag to enable config reload
 HTTP call to reload config
 POST Method
 <ip_address_of_prometheus>:9090/-/reload 
+For example you can use mac terminal using below command.
+$ curl -X POST http://localhost:9090/-/reload -v
 
 
 execution flow:
