@@ -1,0 +1,24 @@
+[
+    {
+      "labels": {
+        "job": "node-aws",
+        "cloud": "aws",
+        "owner": "Vishal",
+        "location": "us-east-1"
+      },
+      "targets": [
+
+      ]
+    },
+    {
+        "labels": {
+          "job": "node-azure",
+          "cloud": "azure",
+          "owner": "Anudeep",
+          "location": "virginia"
+        },
+        "targets": [
+          "localhost:9090"
+        ]
+      }
+]
