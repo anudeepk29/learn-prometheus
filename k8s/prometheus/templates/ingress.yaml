@@ -3,11 +3,7 @@ kind: Ingress
 metadata:
   name: prometheus-ingress
 spec:
-  defaultBackend:
-    service:
-      name: prometheus
-      port:
-        number: 9090
+  ingressClassName: nginx
   rules:
   - host: prom.local.com
     http:
