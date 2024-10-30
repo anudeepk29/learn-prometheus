@@ -27,9 +27,9 @@ spec:
           volumeMounts:
             - name: prometheus-storage
               mountPath: /prometheus
-          resources: {}
             - name: config-volume
               mountPath: /etc/prometheus
+          resources: {}
         - name: config-reloader
           image: quay.io/coreos/configmap-reload
           args:
