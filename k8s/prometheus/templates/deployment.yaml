@@ -30,14 +30,14 @@ spec:
             - name: config-volume
               mountPath: /etc/prometheus
           resources: {}
-        - name: config-reloader
-          image: quay.io/coreos/configmap-reload
-          args:
-            - --volume-dir=/etc/prometheus
-            - --webhook-url=http://localhost:9090/-/reload
-          volumeMounts:
-            - name: config-volume
-              mountPath: /etc/prometheus
+        # - name: config-reloader
+        #   image: quay.io/coreos/configmap-reload
+        #   args:
+        #     - --volume-dir=/etc/prometheus
+        #     - --webhook-url=http://localhost:9090/-/reload
+        #   volumeMounts:
+        #     - name: config-volume
+        #       mountPath: /etc/prometheus
       volumes:
         - name: config-volume
           configMap:
