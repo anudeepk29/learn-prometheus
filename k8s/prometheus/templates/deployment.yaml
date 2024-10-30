@@ -29,9 +29,9 @@ spec:
               mountPath: /prometheus
           resources: {}
       volumes:
-        - name: config-volume
-          configMap:
-            name: prometheus-config
+        # - name: config-volume
+        #   configMap:
+        #     name: prometheus-config
         - name: prometheus-storage
           persistentVolumeClaim:
             claimName: prometheus-data
