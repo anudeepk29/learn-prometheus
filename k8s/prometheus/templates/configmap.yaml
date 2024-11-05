@@ -21,4 +21,4 @@ data:
     - job_name: 'node-low'
       scrape_interval: 10s
       static_configs:
-        - targets: ['192.168.56.108:9090']
+        - targets: ['192.168.56.108:9100']
