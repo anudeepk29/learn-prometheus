@@ -17,3 +17,8 @@ data:
       file_sd_configs:
       - files:
         - '/etc/prometheus/targets.json'
+
+    - job_name: 'node-low'
+      scrape_interval: 10s
+      static_configs:
+        - targets: ['192.168.56.108:9090']
