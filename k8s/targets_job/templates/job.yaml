@@ -1,0 +1,44 @@
+# apiVersion: batch/v1
+# kind: CronJob
+# metadata:
+#   name: targets-job
+# spec:
+#   schedule: "* * * * *"  # This is a cron expression for every day at midnight
+#   jobTemplate:
+#     spec:
+#       template:
+#         spec:
+#           containers:
+#             - name: targets-job
+#               image: targetsapp:latest  # You can use any image you need
+#             #   command:
+#             #     - "/bin/sh"
+#             #     - "-c"
+#             #     - "echo Hello, World! The time is $(date)"
+#               volumeMounts:
+#                 - name: targets
+#                   mountPath: /var/targets
+#           restartPolicy: OnFailure  # The job will be retried if it fails
+#           volumes:
+#             - name: targets
+#               persistentVolumeClaim:
+#                 claimName: prometheus-targets
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+  labels:
+    app: my-app
+spec:
+  containers:
+  - name: my-container
+    image: docker.io/anudeep29ak/targetsapp:latest
+    volumeMounts:
+    - name: targets
+      mountPath: /var/targets
+  volumes:
+  - name: targets
+    persistentVolumeClaim:
+      claimName: prometheus-targets
+
+
