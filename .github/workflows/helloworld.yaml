@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   say-hello:
-    runs-on: sirius-linux
+    runs-on: Linux
 
     steps:
     - name: Checkout repository
